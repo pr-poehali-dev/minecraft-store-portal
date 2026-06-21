@@ -101,7 +101,6 @@ export default function Index() {
             🟢 ОНЛАЙН: 1 247 ИГРОКОВ
           </div>
           <h1 className="font-pixel text-2xl md:text-5xl text-white leading-relaxed mb-8 glow-text">
-            МАГАЗИН<br />
             <span className="text-accent">VANILLAMIST</span>
           </h1>
           <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-10 font-medium drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)]">
