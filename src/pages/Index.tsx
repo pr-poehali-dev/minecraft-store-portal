@@ -1,17 +1,233 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import Icon from '@/components/ui/icon';
+import { Button } from '@/components/ui/button';
 
-const Index = () => {
+const HERO_BG =
+  'https://cdn.poehali.dev/projects/0476f28d-fa01-44ea-9215-0abd702faae8/files/a3601825-7324-4fe3-95de-b2191ace1fc8.jpg';
+
+const NAV = [
+  { id: 'home', label: 'Главная' },
+  { id: 'plus', label: 'Плюс' },
+  { id: 'rules', label: 'Правила' },
+];
+
+const PRIVILEGES = [
+  {
+    name: 'VIP',
+    price: '149₽',
+    color: 'bg-primary',
+    icon: 'Sparkles',
+    perks: ['Цветной ник в чате', 'Доступ к /kit vip', '3 точки дома', 'Префикс [VIP]'],
+  },
+  {
+    name: 'PREMIUM',
+    price: '349₽',
+    color: 'bg-secondary',
+    icon: 'Crown',
+    perks: ['Всё из VIP', 'Полёт /fly', '5 точек дома', 'Доступ к /hat'],
+    featured: true,
+  },
+  {
+    name: 'LEGEND',
+    price: '699₽',
+    color: 'bg-accent',
+    icon: 'Gem',
+    perks: ['Всё из PREMIUM', 'Команда /god', '10 точек дома', 'Свой цвет ника'],
+  },
+];
+
+const CASES = [
+  { name: 'Обычный кейс', price: '49₽', emoji: '📦', drop: 'Ресурсы и еда' },
+  { name: 'Редкий кейс', price: '99₽', emoji: '🎁', drop: 'Зачар. предметы' },
+  { name: 'Алмазный кейс', price: '199₽', emoji: '💎', drop: 'Элитный лут' },
+  { name: 'Эндер кейс', price: '299₽', emoji: '🟣', drop: 'Уникальные скины' },
+];
+
+const RULES = [
+  { icon: 'Ban', title: 'Без читов', text: 'Запрещены любые читы, X-Ray и сторонние модификации, дающие преимущество.' },
+  { icon: 'MessageSquareOff', title: 'Уважение в чате', text: 'Никаких оскорблений, спама, флуда и рекламы других серверов.' },
+  { icon: 'Pickaxe', title: 'Не гриферь', text: 'Разрушение и кража чужих построек строго запрещены и караются баном.' },
+  { icon: 'UserX', title: 'Один аккаунт', text: 'Использование нескольких аккаунтов для обхода наказаний запрещено.' },
+  { icon: 'Bug', title: 'Сообщай о багах', text: 'Использование багов и дюпов ведёт к блокировке. Сообщай админам.' },
+  { icon: 'Heart', title: 'Будь дружелюбным', text: 'Помогай новичкам и создавай приятную атмосферу для всех игроков.' },
+];
+
+export default function Index() {
+  const [active, setActive] = useState('home');
+
+  const scrollTo = (id: string) => {
+    setActive(id);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
-      <span className="absolute bottom-8 left-1/2 -translate-x-1/2 inline-block bg-[#FF6637] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap">
-        Подождите 5 минут, Юра создает первую версию проекта с нуля
-      </span>
+    <div className="min-h-screen bg-background font-sans text-foreground">
+      {/* HEADER */}
+      <header className="sticky top-0 z-50 grass-stripe border-b-4 border-black/80">
+        <div className="container flex items-center justify-between py-3">
+          <button onClick={() => scrollTo('home')} className="flex items-center gap-3">
+            <div className="pixel-border bg-accent w-9 h-9 flex items-center justify-center text-lg">
+              ⛏️
+            </div>
+            <span className="font-pixel text-sm text-white drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)]">
+              CubeCraft
+            </span>
+          </button>
+          <nav className="flex gap-2">
+            {NAV.map((n) => (
+              <button
+                key={n.id}
+                onClick={() => scrollTo(n.id)}
+                className={`pixel-btn px-3 py-2 text-white ${
+                  active === n.id ? 'bg-accent !text-foreground' : 'bg-secondary'
+                }`}
+              >
+                {n.label}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section id="home" className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${HERO_BG})`, imageRendering: 'pixelated' }}
+        />
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="container relative py-24 md:py-36 text-center">
+          <div className="animate-fade-in inline-block mb-6 px-4 py-2 bg-accent border-4 border-black/80 font-pixel text-[10px] text-foreground">
+            🟢 ОНЛАЙН: 1 247 ИГРОКОВ
+          </div>
+          <h1 className="font-pixel text-2xl md:text-5xl text-white leading-relaxed drop-shadow-[4px_4px_0_rgba(0,0,0,0.7)] mb-8">
+            МАГАЗИН<br />
+            <span className="text-accent">CUBECRAFT</span>
+          </h1>
+          <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-10 font-medium drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)]">
+            Покупай привилегии, открывай кейсы и становись легендой нашего сервера!
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button onClick={() => scrollTo('plus')} className="pixel-btn bg-primary text-white px-8 py-6 text-xs h-auto hover:bg-primary">
+              Купить Плюс
+            </Button>
+            <Button onClick={() => scrollTo('rules')} className="pixel-btn bg-card text-foreground px-8 py-6 text-xs h-auto hover:bg-card">
+              Правила
+            </Button>
+          </div>
+
+          <div className="mt-14 inline-flex items-center gap-3 bg-card/95 border-4 border-black/80 px-5 py-3">
+            <Icon name="Server" size={20} className="text-primary" />
+            <code className="font-pixel text-[10px] md:text-xs text-foreground">play.cubecraft.ru</code>
+            <span className="font-pixel text-[8px] text-muted-foreground">COPY</span>
+          </div>
+        </div>
+      </section>
+
+      {/* CASES */}
+      <section className="container py-20">
+        <h2 className="font-pixel text-xl md:text-2xl text-center mb-12 text-foreground">
+          🎁 КЕЙСЫ
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {CASES.map((c, i) => (
+            <div
+              key={c.name}
+              className="pixel-card p-6 text-center animate-fade-in"
+              style={{ animationDelay: `${i * 0.08}s`, opacity: 0 }}
+            >
+              <div className="text-5xl mb-4 animate-float" style={{ animationDelay: `${i * 0.3}s` }}>
+                {c.emoji}
+              </div>
+              <h3 className="font-pixel text-[11px] mb-2">{c.name}</h3>
+              <p className="text-sm text-muted-foreground mb-4">{c.drop}</p>
+              <Button className="pixel-btn w-full bg-accent text-foreground py-5 h-auto hover:bg-accent">
+                {c.price}
+              </Button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PLUS / PRIVILEGES */}
+      <section id="plus" className="py-20 grass-stripe border-y-4 border-black/80">
+        <div className="container">
+          <h2 className="font-pixel text-xl md:text-2xl text-center mb-3 text-white drop-shadow-[3px_3px_0_rgba(0,0,0,0.6)]">
+            ⭐ ПЛЮС
+          </h2>
+          <p className="text-center text-white/90 mb-12 font-medium drop-shadow-[1px_1px_0_rgba(0,0,0,0.5)]">
+            Выбери привилегию и получи преимущества на сервере
+          </p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {PRIVILEGES.map((p, i) => (
+              <div
+                key={p.name}
+                className={`pixel-card p-7 animate-fade-in ${p.featured ? 'md:-translate-y-4' : ''}`}
+                style={{ animationDelay: `${i * 0.1}s`, opacity: 0 }}
+              >
+                {p.featured && (
+                  <div className="font-pixel text-[8px] bg-accent text-foreground inline-block px-3 py-1 mb-3 border-2 border-black/80">
+                    ПОПУЛЯРНОЕ
+                  </div>
+                )}
+                <div className={`${p.color} w-14 h-14 border-4 border-black/80 flex items-center justify-center mb-4`}>
+                  <Icon name={p.icon} size={26} className="text-white" />
+                </div>
+                <h3 className="font-pixel text-base mb-1">{p.name}</h3>
+                <div className="font-pixel text-2xl text-primary mb-5">{p.price}</div>
+                <ul className="space-y-3 mb-7">
+                  {p.perks.map((perk) => (
+                    <li key={perk} className="flex items-start gap-2 text-sm">
+                      <Icon name="Check" size={18} className="text-primary mt-0.5 shrink-0" />
+                      <span>{perk}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button className="pixel-btn w-full bg-primary text-white py-6 h-auto hover:bg-primary">
+                  Купить
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RULES */}
+      <section id="rules" className="container py-20">
+        <h2 className="font-pixel text-xl md:text-2xl text-center mb-3">📜 ПРАВИЛА СЕРВЕРА</h2>
+        <p className="text-center text-muted-foreground mb-12 font-medium">
+          Соблюдай правила, чтобы игра была честной и приятной для всех
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {RULES.map((r, i) => (
+            <div
+              key={r.title}
+              className="pixel-card p-6 animate-fade-in"
+              style={{ animationDelay: `${i * 0.07}s`, opacity: 0 }}
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="bg-secondary w-11 h-11 border-4 border-black/80 flex items-center justify-center shrink-0">
+                  <Icon name={r.icon} fallback="ShieldAlert" size={22} className="text-white" />
+                </div>
+                <h3 className="font-pixel text-[11px] leading-relaxed">{r.title}</h3>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">{r.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="grass-stripe border-t-4 border-black/80 py-10">
+        <div className="container text-center">
+          <div className="font-pixel text-sm text-white drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)] mb-3">
+            ⛏️ CUBECRAFT
+          </div>
+          <p className="text-white/85 text-sm font-medium">
+            play.cubecraft.ru · © 2026 · Лучший Minecraft-сервер
+          </p>
+        </div>
+      </footer>
     </div>
   );
-};
-
-export default Index;
+}
