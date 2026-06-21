@@ -103,9 +103,6 @@ export default function Index() {
           <h1 className="font-pixel text-2xl md:text-5xl text-white leading-relaxed mb-8 glow-text">
             <span className="text-accent">VANILLAMIST</span>
           </h1>
-          <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-10 font-medium drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)]">
-            Покупай привилегии, открывай кейсы и становись легендой нашего сервера!
-          </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button onClick={() => scrollTo('plus')} className="pixel-btn bg-primary text-white px-8 py-6 text-xs h-auto hover:bg-primary">
               Купить Плюс
@@ -123,30 +120,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CASES */}
-      <section className="container py-20">
-        <h2 className="font-pixel text-xl md:text-2xl text-center mb-12 text-accent glow-text">
-          🎁 КЕЙСЫ
-        </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {CASES.map((c, i) => (
-            <div
-              key={c.name}
-              className="pixel-card p-6 text-center animate-fade-in"
-              style={{ animationDelay: `${i * 0.08}s`, opacity: 0 }}
-            >
-              <div className="text-5xl mb-4 animate-float" style={{ animationDelay: `${i * 0.3}s` }}>
-                {c.emoji}
-              </div>
-              <h3 className="font-pixel text-[11px] mb-2">{c.name}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{c.drop}</p>
-              <Button className="pixel-btn w-full bg-accent text-accent-foreground py-5 h-auto hover:bg-accent">
-                {c.price}
-              </Button>
-            </div>
-          ))}
-        </div>
-      </section>
+
 
       {/* PLUS / PRIVILEGES */}
       <section id="plus" className="py-20 grass-stripe border-y-4">
