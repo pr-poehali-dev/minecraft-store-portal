@@ -104,10 +104,10 @@ export default function Index() {
             <span className="text-accent">VANILLAMIST</span>
           </h1>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button onClick={() => scrollTo('plus')} className="pixel-btn bg-primary text-white px-8 py-6 text-xs h-auto hover:bg-primary">
+            <Button onClick={() => scrollTo('plus')} className="pixel-btn bg-card/80 text-white/90 px-8 py-6 text-xs h-auto hover:bg-card border-purple-500/40">
               Купить Плюс
             </Button>
-            <Button onClick={() => scrollTo('rules')} className="pixel-btn bg-card text-foreground px-8 py-6 text-xs h-auto hover:bg-card">
+            <Button onClick={() => scrollTo('rules')} className="pixel-btn bg-transparent text-white/70 px-8 py-6 text-xs h-auto hover:bg-card/50 border-white/20">
               Правила
             </Button>
           </div>
@@ -156,7 +156,7 @@ export default function Index() {
                     </li>
                   ))}
                 </ul>
-                <Button className="pixel-btn w-full bg-primary text-white py-6 h-auto hover:bg-primary">
+                <Button className="pixel-btn w-full bg-card/80 text-white/90 py-6 h-auto hover:bg-card border-purple-500/40">
                   Купить
                 </Button>
               </div>
