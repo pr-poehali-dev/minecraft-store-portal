@@ -109,7 +109,7 @@ export default function Index() {
             </Button>
           </div>
 
-          <div className="mt-20 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-36 flex flex-wrap items-center justify-center gap-4">
             <div className="inline-flex items-center gap-3 bg-card/95 pixel-card px-5 py-3">
               <Icon name="Server" size={20} className="text-accent" />
               <code className="font-pixel text-[10px] md:text-xs text-foreground">play.vanillamist.ru</code>
