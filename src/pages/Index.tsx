@@ -92,7 +92,7 @@ export default function Index() {
       {/* HERO */}
       <section id="home" className="relative overflow-hidden bg-background">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-90"
+          className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{ backgroundImage: `url(${HERO_BG})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
