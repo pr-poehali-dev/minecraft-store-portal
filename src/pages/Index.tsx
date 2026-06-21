@@ -3,7 +3,7 @@ import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
 const HERO_BG =
-  'https://cdn.poehali.dev/projects/0476f28d-fa01-44ea-9215-0abd702faae8/bucket/241a4bcd-89a1-464e-b07f-7051f008c228.jpg';
+  'https://cdn.poehali.dev/projects/0476f28d-fa01-44ea-9215-0abd702faae8/bucket/d7b99b93-b456-4dfe-a4d1-c6daa6287d3e.jpg';
 
 const NAV = [
   { id: 'home', label: 'Главная' },
