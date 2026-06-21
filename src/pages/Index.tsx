@@ -102,7 +102,7 @@ export default function Index() {
           </h1>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button onClick={() => scrollTo('plus')} className="pixel-btn bg-card/80 text-white/90 px-8 py-6 text-xs h-auto hover:bg-card border-purple-500/40">
-              Купить Плюс
+              Начать играть
             </Button>
             <Button onClick={() => scrollTo('rules')} className="pixel-btn bg-transparent text-white/70 px-8 py-6 text-xs h-auto hover:bg-card/50 border-white/20">
               Правила
