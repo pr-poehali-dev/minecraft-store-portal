@@ -3,7 +3,7 @@ import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
 const HERO_BG =
-  'https://cdn.poehali.dev/projects/0476f28d-fa01-44ea-9215-0abd702faae8/files/a3601825-7324-4fe3-95de-b2191ace1fc8.jpg';
+  'https://cdn.poehali.dev/projects/0476f28d-fa01-44ea-9215-0abd702faae8/bucket/241a4bcd-89a1-464e-b07f-7051f008c228.jpg';
 
 const NAV = [
   { id: 'home', label: 'Главная' },
@@ -63,14 +63,14 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
       {/* HEADER */}
-      <header className="sticky top-0 z-50 grass-stripe border-b-4 border-black/80">
+      <header className="sticky top-0 z-50 grass-stripe border-b-4">
         <div className="container flex items-center justify-between py-3">
           <button onClick={() => scrollTo('home')} className="flex items-center gap-3">
-            <div className="pixel-border bg-accent w-9 h-9 flex items-center justify-center text-lg">
-              ⛏️
+            <div className="bg-accent w-9 h-9 flex items-center justify-center text-lg pixel-btn">
+              💎
             </div>
-            <span className="font-pixel text-sm text-white drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)]">
-              CubeCraft
+            <span className="font-pixel text-sm text-white glow-text">
+              VibeHype
             </span>
           </button>
           <nav className="flex gap-2">
@@ -79,7 +79,7 @@ export default function Index() {
                 key={n.id}
                 onClick={() => scrollTo(n.id)}
                 className={`pixel-btn px-3 py-2 text-white ${
-                  active === n.id ? 'bg-accent !text-foreground' : 'bg-secondary'
+                  active === n.id ? 'bg-accent !text-accent-foreground' : 'bg-secondary'
                 }`}
               >
                 {n.label}
@@ -90,19 +90,19 @@ export default function Index() {
       </header>
 
       {/* HERO */}
-      <section id="home" className="relative overflow-hidden">
+      <section id="home" className="relative overflow-hidden bg-background">
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${HERO_BG})`, imageRendering: 'pixelated' }}
+          className="absolute inset-0 bg-cover bg-center opacity-90"
+          style={{ backgroundImage: `url(${HERO_BG})` }}
         />
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
         <div className="container relative py-24 md:py-36 text-center">
-          <div className="animate-fade-in inline-block mb-6 px-4 py-2 bg-accent border-4 border-black/80 font-pixel text-[10px] text-foreground">
+          <div className="animate-fade-in inline-block mb-6 px-4 py-2 bg-accent font-pixel text-[10px] text-accent-foreground pixel-btn">
             🟢 ОНЛАЙН: 1 247 ИГРОКОВ
           </div>
-          <h1 className="font-pixel text-2xl md:text-5xl text-white leading-relaxed drop-shadow-[4px_4px_0_rgba(0,0,0,0.7)] mb-8">
+          <h1 className="font-pixel text-2xl md:text-5xl text-white leading-relaxed mb-8 glow-text">
             МАГАЗИН<br />
-            <span className="text-accent">CUBECRAFT</span>
+            <span className="text-accent">VIBEHYPE</span>
           </h1>
           <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-10 font-medium drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)]">
             Покупай привилегии, открывай кейсы и становись легендой нашего сервера!
@@ -116,9 +116,9 @@ export default function Index() {
             </Button>
           </div>
 
-          <div className="mt-14 inline-flex items-center gap-3 bg-card/95 border-4 border-black/80 px-5 py-3">
-            <Icon name="Server" size={20} className="text-primary" />
-            <code className="font-pixel text-[10px] md:text-xs text-foreground">play.cubecraft.ru</code>
+          <div className="mt-14 inline-flex items-center gap-3 bg-card/95 pixel-card px-5 py-3">
+            <Icon name="Server" size={20} className="text-accent" />
+            <code className="font-pixel text-[10px] md:text-xs text-foreground">play.vibehype.ru</code>
             <span className="font-pixel text-[8px] text-muted-foreground">COPY</span>
           </div>
         </div>
@@ -126,7 +126,7 @@ export default function Index() {
 
       {/* CASES */}
       <section className="container py-20">
-        <h2 className="font-pixel text-xl md:text-2xl text-center mb-12 text-foreground">
+        <h2 className="font-pixel text-xl md:text-2xl text-center mb-12 text-accent glow-text">
           🎁 КЕЙСЫ
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -141,7 +141,7 @@ export default function Index() {
               </div>
               <h3 className="font-pixel text-[11px] mb-2">{c.name}</h3>
               <p className="text-sm text-muted-foreground mb-4">{c.drop}</p>
-              <Button className="pixel-btn w-full bg-accent text-foreground py-5 h-auto hover:bg-accent">
+              <Button className="pixel-btn w-full bg-accent text-accent-foreground py-5 h-auto hover:bg-accent">
                 {c.price}
               </Button>
             </div>
@@ -150,12 +150,12 @@ export default function Index() {
       </section>
 
       {/* PLUS / PRIVILEGES */}
-      <section id="plus" className="py-20 grass-stripe border-y-4 border-black/80">
+      <section id="plus" className="py-20 grass-stripe border-y-4">
         <div className="container">
-          <h2 className="font-pixel text-xl md:text-2xl text-center mb-3 text-white drop-shadow-[3px_3px_0_rgba(0,0,0,0.6)]">
+          <h2 className="font-pixel text-xl md:text-2xl text-center mb-3 text-accent glow-text">
             ⭐ ПЛЮС
           </h2>
-          <p className="text-center text-white/90 mb-12 font-medium drop-shadow-[1px_1px_0_rgba(0,0,0,0.5)]">
+          <p className="text-center text-white/80 mb-12 font-medium">
             Выбери привилегию и получи преимущества на сервере
           </p>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -166,19 +166,19 @@ export default function Index() {
                 style={{ animationDelay: `${i * 0.1}s`, opacity: 0 }}
               >
                 {p.featured && (
-                  <div className="font-pixel text-[8px] bg-accent text-foreground inline-block px-3 py-1 mb-3 border-2 border-black/80">
+                  <div className="font-pixel text-[8px] bg-accent text-accent-foreground inline-block px-3 py-1 mb-3 pixel-btn">
                     ПОПУЛЯРНОЕ
                   </div>
                 )}
-                <div className={`${p.color} w-14 h-14 border-4 border-black/80 flex items-center justify-center mb-4`}>
+                <div className={`${p.color} w-14 h-14 flex items-center justify-center mb-4 pixel-btn`}>
                   <Icon name={p.icon} size={26} className="text-white" />
                 </div>
-                <h3 className="font-pixel text-base mb-1">{p.name}</h3>
-                <div className="font-pixel text-2xl text-primary mb-5">{p.price}</div>
+                <h3 className="font-pixel text-base mb-1 text-foreground">{p.name}</h3>
+                <div className="font-pixel text-2xl text-accent mb-5 glow-text">{p.price}</div>
                 <ul className="space-y-3 mb-7">
                   {p.perks.map((perk) => (
                     <li key={perk} className="flex items-start gap-2 text-sm">
-                      <Icon name="Check" size={18} className="text-primary mt-0.5 shrink-0" />
+                      <Icon name="Check" size={18} className="text-accent mt-0.5 shrink-0" />
                       <span>{perk}</span>
                     </li>
                   ))}
@@ -194,7 +194,7 @@ export default function Index() {
 
       {/* RULES */}
       <section id="rules" className="container py-20">
-        <h2 className="font-pixel text-xl md:text-2xl text-center mb-3">📜 ПРАВИЛА СЕРВЕРА</h2>
+        <h2 className="font-pixel text-xl md:text-2xl text-center mb-3 text-accent glow-text">📜 ПРАВИЛА СЕРВЕРА</h2>
         <p className="text-center text-muted-foreground mb-12 font-medium">
           Соблюдай правила, чтобы игра была честной и приятной для всех
         </p>
@@ -206,8 +206,8 @@ export default function Index() {
               style={{ animationDelay: `${i * 0.07}s`, opacity: 0 }}
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="bg-secondary w-11 h-11 border-4 border-black/80 flex items-center justify-center shrink-0">
-                  <Icon name={r.icon} fallback="ShieldAlert" size={22} className="text-white" />
+                <div className="bg-secondary w-11 h-11 flex items-center justify-center shrink-0 pixel-btn">
+                  <Icon name={r.icon} fallback="ShieldAlert" size={22} className="text-accent" />
                 </div>
                 <h3 className="font-pixel text-[11px] leading-relaxed">{r.title}</h3>
               </div>
@@ -218,13 +218,13 @@ export default function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="grass-stripe border-t-4 border-black/80 py-10">
+      <footer className="grass-stripe border-t-4 py-10">
         <div className="container text-center">
-          <div className="font-pixel text-sm text-white drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)] mb-3">
-            ⛏️ CUBECRAFT
+          <div className="font-pixel text-sm text-accent glow-text mb-3">
+            💎 VIBEHYPE
           </div>
-          <p className="text-white/85 text-sm font-medium">
-            play.cubecraft.ru · © 2026 · Лучший Minecraft-сервер
+          <p className="text-white/75 text-sm font-medium">
+            play.vibehype.ru · © 2026 · Лучший Minecraft-сервер
           </p>
         </div>
       </footer>
