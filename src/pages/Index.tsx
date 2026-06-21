@@ -66,8 +66,8 @@ export default function Index() {
       <header className="sticky top-0 z-50 grass-stripe border-b-4">
         <div className="container flex items-center justify-between py-3">
           <button onClick={() => scrollTo('home')} className="flex items-center gap-3">
-            <div className="bg-accent w-9 h-9 flex items-center justify-center text-lg pixel-btn">
-              💎
+            <div className="w-9 h-9 overflow-hidden pixel-btn">
+              <img src="https://cdn.poehali.dev/projects/0476f28d-fa01-44ea-9215-0abd702faae8/bucket/1a446157-4df0-4537-aebb-a807c202bb31.jpg" alt="logo" className="w-full h-full object-cover" />
             </div>
             <span className="font-pixel text-sm text-white glow-text">
               VibeHype
