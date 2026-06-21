@@ -97,9 +97,6 @@ export default function Index() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
         <div className="container relative py-24 md:py-36 text-center">
-          <div className="animate-fade-in inline-block mb-6 px-4 py-2 bg-accent font-pixel text-[10px] text-accent-foreground pixel-btn">
-            🟢 ОНЛАЙН: 1 247 ИГРОКОВ
-          </div>
           <h1 className="font-pixel text-2xl md:text-5xl text-white leading-relaxed mb-8 glow-text">
             <span className="text-accent">VANILLAMIST</span>
           </h1>
@@ -112,10 +109,16 @@ export default function Index() {
             </Button>
           </div>
 
-          <div className="mt-14 inline-flex items-center gap-3 bg-card/95 pixel-card px-5 py-3">
-            <Icon name="Server" size={20} className="text-accent" />
-            <code className="font-pixel text-[10px] md:text-xs text-foreground">play.vanillamist.ru</code>
-            <span className="font-pixel text-[8px] text-muted-foreground">COPY</span>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="inline-flex items-center gap-3 bg-card/95 pixel-card px-5 py-3">
+              <Icon name="Server" size={20} className="text-accent" />
+              <code className="font-pixel text-[10px] md:text-xs text-foreground">play.vanillamist.ru</code>
+              <span className="font-pixel text-[8px] text-muted-foreground">COPY</span>
+            </div>
+            <div className="inline-flex items-center gap-3 bg-card/95 pixel-card px-5 py-3">
+              <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_6px_2px_rgba(74,222,128,0.6)]" />
+              <span className="font-pixel text-[10px] md:text-xs text-foreground">1 247 ИГРОКОВ</span>
+            </div>
           </div>
         </div>
       </section>
