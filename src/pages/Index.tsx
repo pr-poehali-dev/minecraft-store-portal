@@ -70,7 +70,7 @@ export default function Index() {
               <img src="https://cdn.poehali.dev/projects/0476f28d-fa01-44ea-9215-0abd702faae8/bucket/1a446157-4df0-4537-aebb-a807c202bb31.jpg" alt="logo" className="w-full h-full object-cover" />
             </div>
             <span className="font-pixel text-sm text-white glow-text">
-              VibeHype
+              VanillaMist
             </span>
           </button>
           <nav className="flex gap-2">
@@ -102,7 +102,7 @@ export default function Index() {
           </div>
           <h1 className="font-pixel text-2xl md:text-5xl text-white leading-relaxed mb-8 glow-text">
             МАГАЗИН<br />
-            <span className="text-accent">VIBEHYPE</span>
+            <span className="text-accent">VANILLAMIST</span>
           </h1>
           <p className="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-10 font-medium drop-shadow-[2px_2px_0_rgba(0,0,0,0.6)]">
             Покупай привилегии, открывай кейсы и становись легендой нашего сервера!
@@ -118,7 +118,7 @@ export default function Index() {
 
           <div className="mt-14 inline-flex items-center gap-3 bg-card/95 pixel-card px-5 py-3">
             <Icon name="Server" size={20} className="text-accent" />
-            <code className="font-pixel text-[10px] md:text-xs text-foreground">play.vibehype.ru</code>
+            <code className="font-pixel text-[10px] md:text-xs text-foreground">play.vanillamist.ru</code>
             <span className="font-pixel text-[8px] text-muted-foreground">COPY</span>
           </div>
         </div>
@@ -221,10 +221,10 @@ export default function Index() {
       <footer className="grass-stripe border-t-4 py-10">
         <div className="container text-center">
           <div className="font-pixel text-sm text-accent glow-text mb-3">
-            💎 VIBEHYPE
+            💎 VANILLAMIST
           </div>
           <p className="text-white/75 text-sm font-medium">
-            play.vibehype.ru · © 2026 · Лучший Minecraft-сервер
+            play.vanillamist.ru · © 2026 · Лучший Minecraft-сервер
           </p>
         </div>
       </footer>
